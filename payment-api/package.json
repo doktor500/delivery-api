@@ -1,0 +1,10 @@
+{
+  "name": "payment-service",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "4.14.0"
+  },
+  "devDependencies": {
+    "cors": "^2.8.1"
+  }
+}

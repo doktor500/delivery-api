@@ -1,0 +1,173 @@
+= Kenfos Getting Started Guide
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+
+[introduction]
+= Introduction
+
+Kenfos API documentation reference
+
+[[overview]]
+= Overview
+
+[[overview-http-verbs]]
+== HTTP verbs
+Use of HTTP verbs.
+|===
+| Verb | Usage
+
+| `GET`
+| Used to retrieve a resource
+
+| `POST`
+| Used to create a new resource
+
+| `PATCH`
+| Used to update an existing resource, including partial updates
+
+| `PUT`
+| Used to update an existing resource, full updates only
+
+| `DELETE`
+| Used to delete an existing resource
+|===
+
+[[overview-http-status-codes]]
+== HTTP status codes
+Services try to adhere as closely as possible to standard HTTP and REST conventions in its use of HTTP status codes.
+
+|===
+| Status code | Usage
+
+| `200 OK`
+| Standard response for successful HTTP requests.
+
+| `201 Created`
+| The request has been fulfilled and resulted in a new resource being created.
+
+| `204 No Content`
+| The server successfully processed the request, but is not returning any content.
+
+| `400 Bad Request`
+| The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).
+
+| `404 Not Found`
+| The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible.
+|===
+
+[[resources]]
+= Resources
+
+
+[[resources-user]]
+== User
+The User resource is used to create, get and list Users.
+
+[[resource-post-user]]
+=== Creates a User
+A `POST` request creates a new User.
+
+include::{snippets}/post-user/http-request.adoc[]
+
+==== Example request
+
+include::{snippets}/post-user/curl-request.adoc[]
+
+==== Request fields
+
+include::{snippets}/post-user/request-fields.adoc[]
+
+==== Example response
+
+include::{snippets}/post-user/http-response.adoc[]
+
+==== Response fields
+
+include::{snippets}/post-user/response-fields.adoc[]
+
+[[resource-get-user]]
+=== Gets a User
+A `GET` request fetches a specific User.
+
+include::{snippets}/get-user/http-request.adoc[]
+
+==== Example request
+
+include::{snippets}/get-user/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/get-user/http-response.adoc[]
+
+==== Response fields
+
+include::{snippets}/get-user/response-fields.adoc[]
+
+
+[[resource-get-users]]
+=== Lists Users
+A `GET` request lists all of the service's Users.
+
+include::{snippets}/get-users/http-request.adoc[]
+
+==== Example request
+
+include::{snippets}/get-users/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/get-users/http-response.adoc[]
+
+==== Response fields
+
+include::{snippets}/get-users/response-fields.adoc[]
+
+
+[[resources-delivery]]
+== Delivery
+The Delivery resource is used to get and list Deliveries.
+
+
+[[resource-get-deliveries]]
+=== Lists Deliveries
+A `GET` request lists all of the service's Deliveries.
+
+include::{snippets}/get-deliveries/http-request.adoc[]
+
+==== Example request
+
+include::{snippets}/get-deliveries/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/get-deliveries/http-response.adoc[]
+
+==== Response fields
+
+include::{snippets}/get-deliveries/response-fields.adoc[]
+
+
+[[resource-get-delivery]]
+=== Gets a Delivery
+A `GET` request fetches a specific Delivery.
+
+include::{snippets}/get-delivery/http-request.adoc[]
+
+==== Example request
+
+include::{snippets}/get-delivery/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/get-delivery/http-response.adoc[]
+
+==== Response fields
+
+include::{snippets}/get-delivery/response-fields.adoc[]
+
+
+

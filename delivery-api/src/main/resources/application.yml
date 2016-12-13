@@ -1,0 +1,40 @@
+liquibase:
+  changeLog: classpath:/uk/co/kenfos/migration/changelog.yml
+
+logging:
+  level.org.springframework.boot.context: WARN
+  level.org.springframework.context: WARN
+  level.org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean: WARN
+  level.org.springframework.integration: WARN
+  level.org.springframework.scheduling: WARN
+  level.uk.co.kenfos.spring.integration: WARN
+  level.com.zaxxer.hikari: WARN
+
+server.port: 8888
+spring.jpa.properties.jadira.usertype.autoRegisterUserTypes: true
+
+kenfos:
+  payment-service:
+    url: http://localhost:9999
+
+---
+spring:
+  groovy.template.check-template-location: false
+  jpa.hibernate.ddl-auto: none
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:13306/kenfos
+    username: root
+    password: ''
+    cachePrepStmts: true
+    prepStmtCacheSize: 250
+    prepStmtCacheSqlLimit: 2048
+
+---
+spring:
+  profiles: h2-db
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:kenfos
+    username: sa
+    password: ''

@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1481654711-1
+      author: david.molinero
+      changes:
+        - createTable:
+            tableName: user
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: date_created
+                  type: datetime
+                  constraints:
+                    nullable: false
+              - column:
+                  name: phone_number
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: postcode
+                  type: varchar(255)
+                  constraints:
+                    nullable: false

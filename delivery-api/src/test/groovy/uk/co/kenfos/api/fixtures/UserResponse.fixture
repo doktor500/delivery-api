@@ -1,0 +1,15 @@
+{
+    "id": 1,
+    "billingAgreementStatus": "Active",
+    "dateCreated": "${dateCreated}",
+    "contactDetails": {
+        "phoneNumber": "${phoneNumber}",
+        "postcode": "${postcode}"
+    },
+    "deliveries": [
+        {
+            "id": 1,
+            "priority": ${priority}
+        }
+    ]
+}

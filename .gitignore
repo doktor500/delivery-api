@@ -1,0 +1,8 @@
+.DS_Store
+delivery-api/.gradle
+delivery-api/.tmp
+delivery-api/.idea
+delivery-api/build
+delivery-api/classes
+delivery-api/data
+payment-api/node_modules

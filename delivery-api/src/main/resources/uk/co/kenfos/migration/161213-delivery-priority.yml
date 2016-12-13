@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1481654722-2
+      author: david.molinero
+      changes:
+        - addColumn:
+            columns:
+            - column:
+                name: priority
+                type: int
+            tableName: delivery

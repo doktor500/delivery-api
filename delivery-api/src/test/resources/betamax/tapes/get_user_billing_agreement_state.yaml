@@ -1,0 +1,23 @@
+!tape
+name: get-user-billing-agreement-state
+interactions:
+- recorded: 2016-12-13T17:59:09.288Z
+  request:
+    method: GET
+    uri: http://localhost:9999/1
+    headers:
+      Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+      Content-Length: '0'
+      Host: localhost:9999
+      Proxy-Connection: keep-alive
+      User-Agent: Java/1.8.0_73
+  response:
+    status: 200
+    headers:
+      Access-Control-Allow-Origin: '*'
+      Connection: keep-alive
+      Date: Tue, 13 Dec 2016 17:59:09 GMT
+      Transfer-Encoding: chunked
+      X-Powered-By: Express
+    body: !!binary |-
+      QWN0aXZl

@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1481654695-1
+      author: david.molinero
+      changes:
+        - createTable:
+            tableName: delivery
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: date_created
+                  type: datetime
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 1481654695-2
+      author: david.molinero
+      changes:
+        - addColumn:
+            columns:
+            - column:
+                name: user_id
+                type: int
+            tableName: delivery
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: delivery
+            constraintName: fk_delivery_user
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: id
+            referencedTableName: user
+            referencesUniqueColumn: true

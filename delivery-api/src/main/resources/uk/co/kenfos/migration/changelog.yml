@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: uk/co/kenfos/migration/161213-create-user.yml
+  - include:
+      file: uk/co/kenfos/migration/161213-create-delivery.yml
+  - include:
+      file: uk/co/kenfos/migration/161213-delivery-priority.yml
