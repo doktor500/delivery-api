@@ -7,6 +7,6 @@ kenfos:
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:13306/kenfos-integration-test
+    url: jdbc:mysql://localhost:13306/kenfos_integration_test
     username: root
     password: ''
