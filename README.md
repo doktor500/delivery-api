@@ -21,22 +21,22 @@ Requirements
 	cd delivery-api
 	./setup.sh
 
-### Run Application
+### Run delivery-api
 
 	cd delivery-api
 	./gradlew bootRun
 
-### Run Application with in-memory DB
+### Run delivery-api with in-memory DB
 
 	cd delivery-api
 	./gradlew bootRun -Dspring.profiles.active=h2-db
 
-### Run tests on delivery-api (with default payment-api up and running)
+### Run tests on delivery-api (if default payment-api is up and running)
 
 	cd delivery-api
 	./gradlew test
 
-### Run tests on delivery-api (with fake payment-api)
+### Run tests on delivery-api (with a fake implementation of payment-api)
 
 	cd delivery-api
 	SPRING_PROFILES_ACTIVE=fake-payment-service ./gradlew test
