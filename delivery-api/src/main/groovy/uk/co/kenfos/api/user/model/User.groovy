@@ -1,13 +1,14 @@
 package uk.co.kenfos.api.user.model
 
 import groovy.transform.InheritConstructors
-import org.joda.time.DateTime
+import uk.co.kenfos.api.utils.Clock
 import uk.co.kenfos.api.user.model.delivery.Delivery
 
 import javax.persistence.*
 import javax.validation.Valid
 import javax.validation.constraints.NotNull
 import javax.validation.constraints.Size
+import java.time.LocalDateTime
 
 import static javax.persistence.CascadeType.ALL
 
@@ -31,7 +32,7 @@ class User {
     Set<Delivery> deliveries = []
 
     @Column(updatable = false)
-    final DateTime dateCreated = DateTime.now()
+    final LocalDateTime dateCreated = Clock.now()
 
     @Transient
     String billingAgreementStatus

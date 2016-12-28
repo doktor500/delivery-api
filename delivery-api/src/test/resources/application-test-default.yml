@@ -1,4 +1,4 @@
-server.port: 8888
+server.port: 8181
 server.url: http://127.0.0.1
 
 kenfos:
@@ -6,7 +6,7 @@ kenfos:
 
 spring:
   datasource:
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:13306/kenfos_integration_test
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/kenfos_integration_test?useSSL=false&nullNamePatternMatchesAll=true
     username: root
     password: ''

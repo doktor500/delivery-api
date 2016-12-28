@@ -1,9 +1,9 @@
 package uk.co.kenfos.api
 
-import org.springframework.boot.test.SpringApplicationConfiguration
+import org.springframework.test.context.ContextConfiguration
 import spock.lang.Specification
 
-@SpringApplicationConfiguration(classes = Application)
+@ContextConfiguration(classes = Application)
 @SuppressWarnings('AbstractClassWithoutAbstractMethod')
 abstract class IntegrationSpec extends Specification {
 

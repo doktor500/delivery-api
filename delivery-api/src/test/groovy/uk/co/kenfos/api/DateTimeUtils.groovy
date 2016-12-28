@@ -1,20 +1,14 @@
 package uk.co.kenfos.api
 
-import org.joda.time.DateTime
+import java.time.LocalDateTime
 
-import static java.util.concurrent.TimeUnit.DAYS
-import static java.util.concurrent.TimeUnit.SECONDS
-import static org.junit.Assert.assertThat
-import static uk.co.it.modular.hamcrest.date.DateMatchers.within
+import static java.time.temporal.ChronoUnit.DAYS
+import static org.junit.Assert.assertEquals
 
 @SuppressWarnings('SpecFileName')
 class DateTimeUtils {
 
-    static void isCurrentDate(String date) {
-        assertThat(DateTime.parse(date).toDate(), within(3, SECONDS, new Date()))
-    }
-
     static void isCurrentDay(String date) {
-        assertThat(DateTime.parse(date).toDate(), within(1, DAYS, new Date()))
+        assertEquals(LocalDateTime.parse(date).truncatedTo(DAYS), LocalDateTime.now().truncatedTo(DAYS))
     }
 }

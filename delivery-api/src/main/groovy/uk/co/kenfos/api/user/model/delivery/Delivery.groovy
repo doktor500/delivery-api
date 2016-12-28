@@ -1,13 +1,14 @@
 package uk.co.kenfos.api.user.model.delivery
 
 import groovy.transform.InheritConstructors
-import org.joda.time.DateTime
+import uk.co.kenfos.api.utils.Clock
 import uk.co.kenfos.api.user.model.User
 
 import javax.persistence.*
 import javax.validation.Valid
 import javax.validation.constraints.Min
 import javax.validation.constraints.NotNull
+import java.time.LocalDateTime
 
 @Entity
 @InheritConstructors
@@ -26,7 +27,7 @@ class Delivery {
 
     @Column(updatable = false)
     @SuppressWarnings('PrivateFieldCouldBeFinal')
-    private DateTime dateCreated = DateTime.now()
+    private LocalDateTime dateCreated = Clock.now()
 
     @NotNull(message = 'delivery.priority.null')
     @Min(value = 0L, message = 'delivery.priority.min')
@@ -35,11 +36,11 @@ class Delivery {
     Delivery(Map args) {
         this.id = args.id
         this.user = args.user
-        this.dateCreated = args.dateCreated ?: DateTime.now()
+        this.dateCreated = args.dateCreated ?: Clock.now()
         this.priority = args.priority ?: DEFAULT_PRIORITY
     }
 
-    DateTime getDateCreated() {
+    LocalDateTime getDateCreated() {
         dateCreated
     }
 }

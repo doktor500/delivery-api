@@ -4,11 +4,10 @@ Delivery API
 Requirements
 --------------
 
-* Bash
 * Git
 * Java 8
-* MySQL 5.7
 * NodeJs 5.6.0
+* Docker
 
 ### Setup payment-api
 
@@ -16,10 +15,15 @@ Requirements
 	npm install
 	node app.js
 
-### Setup delivery-api
+### Run Application
 
 	cd delivery-api
-	./scripts/db-reset
+	./gradlew bootRun
+
+### Run Application with in-memory DB
+
+	cd delivery-api
+	./gradlew bootRun -Dspring.profiles.active=h2-db
 
 ### Run tests on delivery-api (with payment-api running)
 

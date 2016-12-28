@@ -11,12 +11,11 @@ import uk.co.kenfos.api.user.resource.command.CreateUserCommand
 import uk.co.kenfos.api.user.resource.rest.Resource
 import uk.co.kenfos.api.user.service.UserService
 
-import static javax.ws.rs.core.MediaType.APPLICATION_JSON
 import static org.springframework.web.bind.annotation.RequestMethod.GET
 import static org.springframework.web.bind.annotation.RequestMethod.POST
 
 @RestController
-@RequestMapping(value = '/user', produces = APPLICATION_JSON)
+@RequestMapping(value = '/user', produces = 'application/json')
 class UserController implements Resource {
 
     @Autowired private UserService userService

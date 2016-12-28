@@ -4,8 +4,8 @@ import org.codenarc.source.SourceCode
 
 class SpecFileNameRule extends AbstractRule {
 
-    private static final FILE_NAMES = ['UnitSpec', 'IntegrationSpec', 'FunctionalSpec', 'E2ESpec', 'Rule']
-    private static final MESSAGE = 'The file name has to follow the convention *UnitSpec, *IntegrationSpec, *FunctionalSpec, *E2ESpec, *Rule'
+    private static final FILE_NAMES = ['UnitSpec', 'IntegrationSpec', 'FunctionalSpec', 'E2ESpec', 'Fixture', 'Rule']
+    private static final MESSAGE = 'The file name has to follow the convention *UnitSpec, *IntegrationSpec, *FunctionalSpec, *E2ESpec, *Fixture, *Rule'
 
     String name = 'SpecFileName'
     int priority = 3

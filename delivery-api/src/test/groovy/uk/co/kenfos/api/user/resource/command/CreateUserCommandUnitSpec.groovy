@@ -1,10 +1,10 @@
 package uk.co.kenfos.api.user.resource.command
 
-import org.joda.time.DateTimeUtils
 import spock.lang.Specification
 import uk.co.kenfos.api.user.model.ContactDetails
 import uk.co.kenfos.api.user.model.User
 import uk.co.kenfos.api.user.model.delivery.Delivery
+import uk.co.kenfos.api.utils.ClockTestUtils
 
 import static uk.co.kenfos.api.AssertUtils.reflectionEquals
 import static uk.co.kenfos.api.user.model.delivery.DeliveryType.FAST_DELIVERY
@@ -16,13 +16,13 @@ class CreateUserCommandUnitSpec extends Specification {
 
     void 'creates a user'() {
         given:
-        DateTimeUtils.setCurrentMillisFixed(new Date().time)
+        ClockTestUtils.fixClock()
 
         expect:
         reflectionEquals(userCmd.execute(), expectedUser)
 
         cleanup:
-        DateTimeUtils.setCurrentMillisSystem()
+        ClockTestUtils.useSystemDefaultClock()
     }
 
     private getUserCmd() {

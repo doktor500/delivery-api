@@ -8,11 +8,10 @@ import uk.co.kenfos.api.user.json.DeliveryJsonMapper
 import uk.co.kenfos.api.user.repository.DeliveryRepository
 import uk.co.kenfos.api.user.resource.rest.Resource
 
-import static javax.ws.rs.core.MediaType.APPLICATION_JSON
 import static org.springframework.web.bind.annotation.RequestMethod.GET
 
 @RestController
-@RequestMapping(value = '/delivery', produces = APPLICATION_JSON)
+@RequestMapping(value = '/delivery', produces = 'application/json')
 class DeliveryController implements Resource {
 
     @Autowired private DeliveryRepository deliveryRepository
@@ -24,7 +23,7 @@ class DeliveryController implements Resource {
         ok deliveryRepository.getOne(id)
     }
 
-    @RequestMapping(method = GET, produces = APPLICATION_JSON)
+    @RequestMapping(method = GET, produces = 'application/json')
     def findAll() {
         ok deliveryRepository.findAll()
     }

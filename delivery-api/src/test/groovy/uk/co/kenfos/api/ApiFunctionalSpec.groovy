@@ -3,11 +3,10 @@ package uk.co.kenfos.api
 import groovy.json.JsonSlurper
 import org.junit.Rule
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.restdocs.RestDocumentation
+import org.springframework.restdocs.JUnitRestDocumentation
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.web.context.WebApplicationContext
 
-import static javax.ws.rs.core.MediaType.APPLICATION_JSON
 import static org.apache.commons.lang.StringUtils.EMPTY
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.documentationConfiguration
 import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.get
@@ -18,7 +17,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 @SuppressWarnings(['AbstractClassWithoutAbstractMethod', 'UnusedMethodParameter'])
 abstract class ApiFunctionalSpec extends ApiBaseIntegrationSpec {
 
-    @Rule RestDocumentation restDocumentation = new RestDocumentation('build/generated-snippets')
+    @Rule JUnitRestDocumentation restDocumentation = new JUnitRestDocumentation('build/generated-snippets')
     @Autowired WebApplicationContext context
 
     protected JsonSlurper jsonSlurper = new JsonSlurper()
@@ -46,7 +45,7 @@ abstract class ApiFunctionalSpec extends ApiBaseIntegrationSpec {
     }
 
     protected doPost(Map args, Map queryParameters) {
-        post(args.resource).contentType(APPLICATION_JSON).content(args.content)
+        post(args.resource).contentType('application/json').content(args.content)
     }
 
     protected doGet(Map args, Map queryParameters) {

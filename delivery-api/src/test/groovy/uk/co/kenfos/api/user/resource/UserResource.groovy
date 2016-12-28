@@ -10,7 +10,7 @@ trait UserResource implements FixtureTemplate {
 
     def aUser(Map args = [:]) {
         getFixture(
-            'UserRequest.fixture',
+            '/user/UserRequest.fixture',
             [
                 phoneNumber: args.phoneNumber == EMPTY ? args.phoneNumber : PHONE_NUMBER,
                 postcode: args.postcode == EMPTY ? args.postcode : POSTCODE
@@ -24,7 +24,7 @@ trait UserResource implements FixtureTemplate {
 
     def user(dateCreated, priority) {
         getFixture(
-            'UserResponse.fixture',
+            '/user/UserResponse.fixture',
             [phoneNumber: PHONE_NUMBER, postcode: POSTCODE, dateCreated: dateCreated, priority: priority]
         )
     }

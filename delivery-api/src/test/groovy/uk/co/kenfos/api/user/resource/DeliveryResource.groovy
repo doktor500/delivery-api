@@ -8,6 +8,6 @@ trait DeliveryResource implements FixtureTemplate {
     }
 
     def delivery(priority) {
-        getFixture('DeliveryResponse.fixture', [priority: priority])
+        getFixture('/delivery/DeliveryResponse.fixture', [priority: priority])
     }
 }
