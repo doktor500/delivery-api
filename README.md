@@ -25,7 +25,12 @@ Requirements
 	cd delivery-api
 	./gradlew bootRun -Dspring.profiles.active=h2-db
 
-### Run tests on delivery-api (with payment-api running)
+### Run tests on delivery-api (with default payment-api up and running)
 
 	cd delivery-api
 	./gradlew test
+
+### Run tests on delivery-api (with fake payment-api)
+
+	cd delivery-api
+	SPRING_PROFILES_ACTIVE=fake-payment-service ./gradlew test

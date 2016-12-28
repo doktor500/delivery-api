@@ -3,6 +3,7 @@ package uk.co.kenfos.api
 import com.jayway.restassured.specification.RequestSpecification
 import groovy.json.JsonSlurper
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.boot.test.context.SpringBootTest
 
 import static com.jayway.restassured.RestAssured.config
 import static com.jayway.restassured.RestAssured.given
@@ -10,7 +11,9 @@ import static com.jayway.restassured.config.DecoderConfig.decoderConfig
 import static com.jayway.restassured.config.EncoderConfig.encoderConfig
 import static com.jayway.restassured.config.RestAssuredConfig.newConfig
 import static com.jayway.restassured.http.ContentType.JSON
+import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.DEFINED_PORT
 
+@SpringBootTest(webEnvironment = DEFINED_PORT)
 @SuppressWarnings('AbstractClassWithoutAbstractMethod')
 abstract class E2ESpec extends ApiBaseIntegrationSpec {
 

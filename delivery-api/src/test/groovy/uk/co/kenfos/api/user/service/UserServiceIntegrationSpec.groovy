@@ -1,9 +1,11 @@
 package uk.co.kenfos.api.user.service
 
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.test.context.ActiveProfiles
 import uk.co.kenfos.api.PersistenceIntegrationSpec
 import uk.co.kenfos.api.fixtures.user.UserFixture
 
+@ActiveProfiles('fake-payment-service')
 class UserServiceIntegrationSpec extends PersistenceIntegrationSpec {
 
     private static final BILLING_AGREEMENT_STATE = 'Active'

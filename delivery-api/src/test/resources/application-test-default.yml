@@ -1,9 +1,6 @@
 server.port: 8181
 server.url: http://127.0.0.1
 
-kenfos:
-  default.dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSS"
-
 spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver

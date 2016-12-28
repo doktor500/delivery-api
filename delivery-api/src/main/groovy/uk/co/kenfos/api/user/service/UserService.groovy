@@ -1,10 +1,10 @@
 package uk.co.kenfos.api.user.service
 
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import uk.co.kenfos.api.user.model.User
 import uk.co.kenfos.api.user.repository.UserRepository
+import uk.co.kenfos.api.user.service.payment.PaymentService
 
 import javax.transaction.Transactional
 
@@ -12,7 +12,7 @@ import javax.transaction.Transactional
 @Transactional
 class UserService {
 
-    @Value('${kenfos.payment-service.url}') private String paymentServiceURL
+    @Autowired private PaymentService paymentService
     @Autowired private UserRepository userRepository
 
     User save(User user) {
@@ -32,11 +32,7 @@ class UserService {
     }
 
     private withBillingAgreement(User user) {
-        user.billingAgreementStatus = billingAgreementStatus(user.id)
+        user.billingAgreementStatus = paymentService.billingAgreementStatus(user.id)
         user
-    }
-
-    private billingAgreementStatus(Long id) {
-        new URL("$paymentServiceURL/$id").text
     }
 }

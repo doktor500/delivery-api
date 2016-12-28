@@ -1,15 +1,12 @@
 package uk.co.kenfos.api
 
-import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.context.ApplicationContext
 import org.springframework.context.ApplicationContextAware
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.test.jdbc.JdbcTestUtils
 
-import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.DEFINED_PORT
 import static uk.co.kenfos.api.Database.tables
 
-@SpringBootTest(webEnvironment = DEFINED_PORT)
 @SuppressWarnings('AbstractClassWithoutAbstractMethod')
 abstract class PersistenceAwareIntegrationSpec extends IntegrationSpec implements ApplicationContextAware {
 
