@@ -6,3 +6,4 @@ delivery-api/build
 delivery-api/classes
 delivery-api/data
 payment-api/node_modules
+betamax.pem
