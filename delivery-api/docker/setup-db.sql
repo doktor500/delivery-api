@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS kenfos;
+CREATE DATABASE IF NOT EXISTS kenfos_integration_test;
