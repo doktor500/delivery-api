@@ -5,6 +5,9 @@
   "dependencies": {
     "express": "4.14.0"
   },
+  "scripts": {
+    "start": "if [ \"$NODE_ENV\" = 'development' ]; then nodemon app.js; else node app.js; fi"
+  },
   "devDependencies": {
     "cors": "^2.8.1"
   }

@@ -1,6 +1,11 @@
-FROM node
+FROM node:7.3.0
 
+COPY src src/
+WORKDIR src/
+
+ARG ENVIRONMENT
+ENV NODE_ENV ${ENVIRONMENT}
+RUN npm install && npm install -g nodemon
+
+CMD [ "npm", "start" ]
 EXPOSE 9999
-COPY . /src
-RUN cd /src; npm install
-CMD ["nodejs", "/src/app.js"]

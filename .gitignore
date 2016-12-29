@@ -5,5 +5,5 @@ delivery-api/.idea
 delivery-api/build
 delivery-api/classes
 delivery-api/data
-payment-api/node_modules
+payment-api/src/node_modules
 betamax.pem
