@@ -29,7 +29,7 @@ Requirements
 ### Run delivery-api with in-memory DB
 
 	cd delivery-api
-	./gradlew bootRun -Dspring.profiles.active=h2-db
+	SPRING_PROFILES_ACTIVE=h2-db ./gradlew bootRun
 
 ### Run tests on delivery-api (if default payment-api is up and running)
 
