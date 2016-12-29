@@ -5,10 +5,10 @@ import org.springframework.test.context.ActiveProfiles
 import uk.co.kenfos.api.PersistenceIntegrationSpec
 import uk.co.kenfos.api.fixtures.user.UserFixture
 
+import static uk.co.kenfos.api.user.model.BillingAgreementState.ACTIVE
+
 @ActiveProfiles('fake-payment-service')
 class UserServiceIntegrationSpec extends PersistenceIntegrationSpec {
-
-    private static final BILLING_AGREEMENT_STATE = 'Active'
 
     @Autowired private UserService userService
 
@@ -17,7 +17,7 @@ class UserServiceIntegrationSpec extends PersistenceIntegrationSpec {
         def user = userService.save(UserFixture.validSample())
 
         then:
-        user.billingAgreementStatus == BILLING_AGREEMENT_STATE
+        user.billingAgreementStatus == ACTIVE.name()
     }
 
     void 'returns user with billing agreement state when a user is fetched from the db'() {
@@ -28,7 +28,7 @@ class UserServiceIntegrationSpec extends PersistenceIntegrationSpec {
         def user = userService.getOne(savedUser.id)
 
         then:
-        user.billingAgreementStatus == BILLING_AGREEMENT_STATE
+        user.billingAgreementStatus == ACTIVE.name()
     }
 
     void 'returns users with billing agreement state when a list of user is fetched from the db'() {
@@ -39,7 +39,7 @@ class UserServiceIntegrationSpec extends PersistenceIntegrationSpec {
         def users = userService.findAll()
 
         then:
-        users && users.every { user -> user.billingAgreementStatus == BILLING_AGREEMENT_STATE }
+        users && users.every { user -> user.billingAgreementStatus == ACTIVE.name() }
     }
 
 }

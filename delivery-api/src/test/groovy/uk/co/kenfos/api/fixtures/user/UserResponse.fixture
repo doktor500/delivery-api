@@ -1,6 +1,6 @@
 {
     "id": 1,
-    "billingAgreementStatus": "Active",
+    "billingAgreementStatus": "ACTIVE",
     "dateCreated": "${dateCreated}",
     "contactDetails": {
         "phoneNumber": "${phoneNumber}",

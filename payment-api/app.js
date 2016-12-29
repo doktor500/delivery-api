@@ -4,11 +4,12 @@ var express = require("express"),
     http    = require("http"),
     server  = http.createServer(app);
 
-var BILLING_AGREEMENT_STATUS = 'Active';
+var BILLING_AGREEMENT_STATUS = 'ACTIVE';
 
 app.use(cors());
 
 app.get('/:id', function(req, res) {
+  console.log('Retrieving billing agreement state');
   res.write(BILLING_AGREEMENT_STATUS);
   res.end();
 });
