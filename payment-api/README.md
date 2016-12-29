@@ -1,2 +1,0 @@
-- Run `npm update`
-- And `node app.js`

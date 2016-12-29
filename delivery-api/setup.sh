@@ -1,7 +1,7 @@
 #!/bin/bash
 
 docker build . --tag kenfos-mysql
-docker run --name kenfos -p3306:3306 -d kenfos-mysql
+docker run --name kenfos-mysql -p3306:3306 -d kenfos-mysql
 
 rm betamax.pem 2> /dev/null
 wget -q https://raw.githubusercontent.com/betamaxteam/betamax/master/betamax.pem

@@ -4,17 +4,15 @@ Delivery API
 Requirements
 --------------
 
-* Bash
 * Git
+* Bash
 * Java 8
-* NodeJs 5.6.0
 * Docker
 
 ### Setup payment-api
 
 	cd payment-api
-	npm install
-	node app.js
+	./setup.sh
 
 ### Setup delivery-api
 
