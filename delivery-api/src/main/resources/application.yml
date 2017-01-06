@@ -10,7 +10,7 @@ server.port: 8080
 
 kenfos:
   payment-service:
-    url: http://localhost:9999
+    url: http://payment-api:9999
 
 ---
 spring:
@@ -18,7 +18,7 @@ spring:
   jpa.hibernate.ddl-auto: none
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/kenfos?useSSL=false&nullNamePatternMatchesAll=true
+    url: jdbc:mysql://delivery-api-db:3306/kenfos?useSSL=false&nullNamePatternMatchesAll=true
     username: root
     password: ''
 

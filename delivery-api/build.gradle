@@ -71,7 +71,7 @@ asciidoctor {
 }
 
 jar {
-    baseName = 'kenfos-api'
+    baseName = 'delivery-api'
     version =  '0.1.0'
     dependsOn asciidoctor
     from ("${asciidoctor.outputDir}/html5") {

@@ -1,11 +1,13 @@
 FROM node:7.3.0
 
-COPY src src/
-WORKDIR src/
+RUN useradd --user-group --create-home --shell /bin/false app
+ENV HOME=/home/app
+USER app
+WORKDIR $HOME
 
-ARG ENVIRONMENT
-ENV NODE_ENV ${ENVIRONMENT}
-RUN npm install && npm install -g nodemon
+COPY src/app.js .
+COPY src/package.json .
+RUN npm install
+CMD npm start
 
-CMD [ "npm", "start" ]
 EXPOSE 9999

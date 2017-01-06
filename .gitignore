@@ -1,4 +1,5 @@
 .DS_Store
+.idea
 delivery-api/.gradle
 delivery-api/.tmp
 delivery-api/.idea
