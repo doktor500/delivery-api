@@ -2,8 +2,18 @@ server.port: 8181
 server.url: http://127.0.0.1
 
 spring:
+  profiles: test-default
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://delivery-api-db:3306/kenfos_integration_test?useSSL=false&nullNamePatternMatchesAll=true
     username: root
+    password: ''
+
+---
+spring:
+  profiles: test-default, h2-db
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:kenfos_integration_test
+    username: sa
     password: ''

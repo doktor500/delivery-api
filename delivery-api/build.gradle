@@ -59,6 +59,7 @@ bootRun {
 }
 
 test {
+    systemProperties = System.properties
     outputs.dir snippetsDir
 }
 

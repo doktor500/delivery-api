@@ -4,6 +4,8 @@ services:
     build: delivery-api/docker/mysql
     ports:
       - "3306:3306"
+    volumes:
+      - ./data:/var/lib/mysql
   payment-api:
     build: payment-api
     ports:
