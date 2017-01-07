@@ -1,16 +1,19 @@
 version: "2"
 services:
   delivery-api-db:
+    image: davidmolinero/delivery-api-db
     build: delivery-api/docker/mysql
     ports:
       - "3306:3306"
     volumes:
       - ./data:/var/lib/mysql
   payment-api:
+    image: davidmolinero/payment-api
     build: payment-api
     ports:
       - "9999:9999"
   delivery-api:
+    image: davidmolinero/delivery-api
     build: delivery-api
     ports:
       - "80:8080"
