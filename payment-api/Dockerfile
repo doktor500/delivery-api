@@ -5,9 +5,10 @@ ENV HOME=/home/app
 USER app
 WORKDIR $HOME
 
-COPY src/app.js .
 COPY src/package.json .
 RUN npm install
+
+COPY src/app.js .
 CMD npm start
 
 EXPOSE 9999
