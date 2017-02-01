@@ -29,12 +29,13 @@ repositories {
 }
 
 dependencies {
-    compile('com.google.guava:guava:21.0')
     compile('org.springframework.boot:spring-boot-devtools')
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.springframework.boot:spring-boot-starter-jdbc')
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
     compile('org.codehaus.groovy:groovy:2.4.7')
+    compile('com.google.guava:guava:21.0')
     compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.7.3')
     compile('com.h2database:h2:1.4.193')
     compile('mysql:mysql-connector-java:6.0.5')
