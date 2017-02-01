@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-public class HealthCheckController {
+public class InfoController {
 
     @RequestMapping("/")
-    public Map healthCheck() {
-        return ImmutableMap.of("status", "ok");
+    public Map info() {
+        return ImmutableMap.of("info", "delivery-api");
     }
 }
