@@ -3,7 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.4.3.RELEASE'
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.5.1.RELEASE'
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.13.0'
     }
 }
@@ -34,9 +34,9 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-jdbc')
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter-actuator')
-    compile('org.codehaus.groovy:groovy:2.4.7')
+    compile('org.codehaus.groovy:groovy:2.4.8')
     compile('com.google.guava:guava:21.0')
-    compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.7.3')
+    compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.8.6')
     compile('com.h2database:h2:1.4.193')
     compile('mysql:mysql-connector-java:6.0.5')
 
@@ -48,7 +48,7 @@ dependencies {
     testCompile('org.spockframework:spock-spring:1.0-groovy-2.4')
     testCompile('com.jayway.restassured:rest-assured:2.9.0')
     testCompile('org.springframework.restdocs:spring-restdocs-mockmvc:1.1.2.RELEASE')
-    testCompile('org.unitils:unitils-core:3.4.3')
+    testCompile('org.unitils:unitils-core:3.4.6')
     testCompile('cglib:cglib-nodep:3.2.4')
 }
 
@@ -98,4 +98,8 @@ task resolveAllDependencies() {
     doLast {
         configurations.all { it.resolve() }
     }
+}
+
+springBoot {
+    executable = true
 }
