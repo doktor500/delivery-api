@@ -12,6 +12,8 @@ kenfos:
   payment-service:
     url: http://payment-api:9999
 
+management.security.enabled: false
+
 ---
 spring:
   groovy.template.check-template-location: false
