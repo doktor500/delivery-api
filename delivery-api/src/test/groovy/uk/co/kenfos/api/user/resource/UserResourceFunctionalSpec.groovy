@@ -15,15 +15,15 @@ import static org.springframework.restdocs.payload.PayloadDocumentation.requestF
 import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields
 import static org.unitils.reflectionassert.ReflectionAssert.assertLenientEquals
 import static uk.co.kenfos.api.DateTimeUtils.isCurrentDay
+import static uk.co.kenfos.api.user.model.delivery.Delivery.DEFAULT_PRIORITY
 
 @Stepwise
 @SuppressWarnings('DuplicateStringLiteral')
 class UserResourceFunctionalSpec extends ApiFunctionalSpec implements UserResource {
 
     private static final USER_RESOURCE = '/user'
-    private static final DEFAULT_PRIORITY = 1
 
-    @Rule BetamaxRecorderRule betamaxRecorderRule = new BetamaxRecorderRule()
+    @Rule BetamaxRecorderRule recorderRule = new BetamaxRecorderRule()
 
     @Betamax(tape = 'get-user-billing-agreement-state')
     void 'POST /user successfully'() {
@@ -68,15 +68,13 @@ class UserResourceFunctionalSpec extends ApiFunctionalSpec implements UserResour
             document: document('get-users', preprocessResponse(prettyPrint()), response(asList: true))
         )
         def dateCreated = json(response).first().dateCreated
-        def priority = json(response).first().deliveries.first().priority
 
         then:
         response.statusCode == HTTP_OK
-        assertLenientEquals(json(response), parse(users(dateCreated, priority)))
+        assertLenientEquals(json(response), parse(users(dateCreated, DEFAULT_PRIORITY)))
 
         and:
         isCurrentDay(dateCreated)
-        priority >= DEFAULT_PRIORITY
     }
 
     private request() {
@@ -95,8 +93,7 @@ class UserResourceFunctionalSpec extends ApiFunctionalSpec implements UserResour
             field("${prefix}contactDetails.postcode").description('User postcode'),
             field("${prefix}dateCreated").description('Date when user has been created'),
             field("${prefix}deliveries").description('List of deliveries'),
-            field("${prefix}deliveries[].id").description('Delivery id'),
-            field("${prefix}deliveries[].priority").description('Delivery priority')
+            field("${prefix}deliveries[].id").description('Delivery id')
         )
     }
 }

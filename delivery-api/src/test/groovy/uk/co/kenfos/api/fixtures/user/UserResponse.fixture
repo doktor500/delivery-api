@@ -8,8 +8,7 @@
     },
     "deliveries": [
         {
-            "id": 1,
-            "priority": ${priority}
+            "id": 1
         }
     ]
 }

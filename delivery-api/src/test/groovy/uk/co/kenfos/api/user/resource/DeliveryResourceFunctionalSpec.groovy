@@ -14,13 +14,13 @@ import static org.springframework.restdocs.operation.preprocess.Preprocessors.pr
 import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath as field
 import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields
 import static org.unitils.reflectionassert.ReflectionAssert.assertLenientEquals
+import static uk.co.kenfos.api.user.model.delivery.Delivery.DEFAULT_PRIORITY
 
 @Stepwise
 class DeliveryResourceFunctionalSpec extends ApiFunctionalSpec implements UserResource, DeliveryResource {
 
     private static final USER_RESOURCE = '/user'
     private static final DELIVERY_RESOURCE = '/delivery'
-    private static final DEFAULT_PRIORITY = 1
 
     @Rule BetamaxRecorderRule betamaxRecorderRule = new BetamaxRecorderRule()
 
