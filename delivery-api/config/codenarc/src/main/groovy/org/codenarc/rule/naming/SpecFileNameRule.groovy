@@ -8,6 +8,7 @@ class SpecFileNameRule extends AbstractRule {
     private static final MESSAGE = 'The file name has to follow the convention *UnitSpec, *IntegrationSpec, *FunctionalSpec, *E2ESpec, *Fixture, *Rule'
 
     String name = 'SpecFileName'
+    String description = 'Spock file name rule'
     int priority = 3
 
     void applyTo(SourceCode sourceCode, List<Violation> violations) {
