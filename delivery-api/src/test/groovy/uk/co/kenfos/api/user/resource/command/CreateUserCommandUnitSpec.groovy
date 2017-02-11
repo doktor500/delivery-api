@@ -7,7 +7,6 @@ import uk.co.kenfos.api.user.model.delivery.Delivery
 import uk.co.kenfos.api.utils.ClockTestUtils
 
 import static uk.co.kenfos.api.AssertUtils.reflectionEquals
-import static uk.co.kenfos.api.user.model.delivery.DeliveryType.FAST_DELIVERY
 
 class CreateUserCommandUnitSpec extends Specification {
 
@@ -32,7 +31,7 @@ class CreateUserCommandUnitSpec extends Specification {
     private getExpectedUser() {
         def contactDetails = new ContactDetails(phoneNumber: PHONE_NUMBER, postcode: POSTCODE)
         def user = new User(contactDetails: contactDetails)
-        user.deliveries = [new Delivery(user: user, type: FAST_DELIVERY)]
+        user.deliveries = [new Delivery(user: user)]
         user
     }
 
