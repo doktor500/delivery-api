@@ -12,19 +12,17 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET
 
 @RestController
 @RequestMapping(value = '/delivery', produces = 'application/json')
-class DeliveryController implements Resource {
+class DeliveryController implements Resource<DeliveryJsonMapper> {
 
     @Autowired private DeliveryRepository deliveryRepository
 
-    Class objectMapper = DeliveryJsonMapper
-
     @RequestMapping(method = GET, value = '/{id}')
-    def find(@PathVariable Long id) {
+    find(@PathVariable Long id) {
         ok deliveryRepository.getOne(id)
     }
 
     @RequestMapping(method = GET, produces = 'application/json')
-    def findAll() {
+    findAll() {
         ok deliveryRepository.findAll()
     }
 

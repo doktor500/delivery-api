@@ -16,27 +16,25 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST
 
 @RestController
 @RequestMapping(value = '/user', produces = 'application/json')
-class UserController implements Resource {
+class UserController implements Resource<UserJsonMapper> {
 
     @Autowired private UserService userService
     @Autowired private EntityValidator entityValidator
 
-    Class objectMapper = UserJsonMapper
-
     @RequestMapping(method = POST)
-    def create(@RequestBody CreateUserCommand cmd) {
+    create(@RequestBody CreateUserCommand cmd) {
         def user = cmd.execute()
         entityValidator.validate(user)
         created userService.save(user)
     }
 
     @RequestMapping(method = GET, value = '/{id}')
-    def find(@PathVariable Long id) {
+    find(@PathVariable Long id) {
         ok userService.getOne(id)
     }
 
     @RequestMapping(method = GET)
-    def findAll() {
+    findAll() {
         ok userService.findAll()
     }
 }

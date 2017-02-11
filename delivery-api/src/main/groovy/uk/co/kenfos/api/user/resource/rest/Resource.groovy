@@ -14,9 +14,7 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL
 import static com.fasterxml.jackson.databind.SerializationFeature.*
 import static org.springframework.http.HttpStatus.*
 
-trait Resource {
-
-    abstract Class getObjectMapper()
+trait Resource<TYPE extends ObjectMapper> {
 
     def created(entity) {
         new ResponseEntity(serialize(entity), CREATED)
@@ -31,11 +29,12 @@ trait Resource {
     }
 
     def serialize(entity) {
-        createObjectMapper(objectMapper).writeValueAsString(entity)
+        def mapper = this.class.genericInfo.superInterfaces.first().actualTypeArguments.first()
+        createObjectMapper(mapper).writeValueAsString(entity)
     }
 
     @Cacheable
-    def createObjectMapper(Class mapper) {
+    TYPE createObjectMapper(mapper) {
         ObjectMapper objectMapper = mapper.newInstance()
         objectMapper.with {
             findAndRegisterModules()

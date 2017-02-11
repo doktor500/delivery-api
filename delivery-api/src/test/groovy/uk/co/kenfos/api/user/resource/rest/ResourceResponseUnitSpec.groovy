@@ -23,9 +23,7 @@ class ResourceResponseUnitSpec extends Specification {
         TimeZone.default = defaultTimeZone
     }
 
-    private class TestResource implements Resource {
-
-        Class objectMapper = ObjectMapper
+    private class TestResource implements Resource<ObjectMapper> {
 
         def action(entity) {
             created entity
