@@ -35,5 +35,5 @@ class User {
     final LocalDateTime dateCreated = Clock.now()
 
     @Transient
-    String billingAgreementStatus
+    BillingAgreementState billingAgreementStatus
 }

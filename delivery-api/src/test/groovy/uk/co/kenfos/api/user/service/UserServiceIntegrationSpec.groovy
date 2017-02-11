@@ -17,7 +17,7 @@ class UserServiceIntegrationSpec extends PersistenceIntegrationSpec {
         def user = userService.save(UserFixture.validSample())
 
         then:
-        user.billingAgreementStatus == ACTIVE.name()
+        user.billingAgreementStatus == ACTIVE
     }
 
     void 'returns user with billing agreement state when a user is fetched from the db'() {
@@ -28,7 +28,7 @@ class UserServiceIntegrationSpec extends PersistenceIntegrationSpec {
         def user = userService.getOne(savedUser.id)
 
         then:
-        user.billingAgreementStatus == ACTIVE.name()
+        user.billingAgreementStatus == ACTIVE
     }
 
     void 'returns users with billing agreement state when a list of user is fetched from the db'() {
@@ -39,7 +39,7 @@ class UserServiceIntegrationSpec extends PersistenceIntegrationSpec {
         def users = userService.findAll()
 
         then:
-        users && users.every { user -> user.billingAgreementStatus == ACTIVE.name() }
+        users && users.every { user -> user.billingAgreementStatus == ACTIVE }
     }
 
 }
