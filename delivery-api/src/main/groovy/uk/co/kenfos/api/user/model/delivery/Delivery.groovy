@@ -14,7 +14,7 @@ import java.time.LocalDateTime
 @InheritConstructors
 class Delivery {
 
-    private static final DEFAULT_PRIORITY = 1
+    static final DEFAULT_PRIORITY = 1
 
     @Id
     @GeneratedValue

@@ -42,12 +42,8 @@ class DeliveryResourceFunctionalSpec extends ApiFunctionalSpec implements UserRe
         )
 
         then:
-        def priority = json(response).priority
         response.statusCode == HTTP_OK
-        assertLenientEquals(json(response), parse(delivery(priority)))
-
-        and:
-        priority >= DEFAULT_PRIORITY
+        assertLenientEquals(json(response), parse(delivery(DEFAULT_PRIORITY)))
     }
 
     void 'GET /delivery successfully'() {
@@ -58,9 +54,8 @@ class DeliveryResourceFunctionalSpec extends ApiFunctionalSpec implements UserRe
         )
 
         then:
-        def priority = json(response).first().priority
         response.statusCode == HTTP_OK
-        assertLenientEquals(json(response), parse(deliveries(priority)))
+        assertLenientEquals(json(response), parse(deliveries(DEFAULT_PRIORITY)))
     }
 
     private response(args = [:]) {
