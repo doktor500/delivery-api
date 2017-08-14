@@ -1,8 +1,8 @@
 package uk.co.kenfos.api.user.model
 
 import groovy.transform.InheritConstructors
-import uk.co.kenfos.api.utils.Clock
 import uk.co.kenfos.api.user.model.delivery.Delivery
+import uk.co.kenfos.api.utils.Clock
 
 import javax.persistence.*
 import javax.validation.Valid
@@ -36,4 +36,7 @@ class User {
 
     @Transient
     BillingAgreementState billingAgreementStatus
+
+    @Transient
+    String lang
 }

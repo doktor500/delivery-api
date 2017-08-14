@@ -6,6 +6,7 @@
         "phoneNumber": "${phoneNumber}",
         "postcode": "${postcode}"
     },
+    "lang": "English",
     "deliveries": [
         {
             "id": 1

@@ -92,6 +92,7 @@ class UserResourceFunctionalSpec extends ApiFunctionalSpec implements UserResour
             field("${prefix}contactDetails.phoneNumber").description('User phone number'),
             field("${prefix}contactDetails.postcode").description('User postcode'),
             field("${prefix}dateCreated").description('Date when user has been created'),
+            field("${prefix}lang").description('Language'),
             field("${prefix}deliveries").description('List of deliveries'),
             field("${prefix}deliveries[].id").description('Delivery id')
         )
